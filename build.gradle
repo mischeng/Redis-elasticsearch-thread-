@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/io.searchbox/jest
+    compile group: 'io.searchbox', name: 'jest', version: '6.3.1'
+// https://mvnrepository.com/artifact/net.java.dev.jna/jna
+    compile group: 'net.java.dev.jna', name: 'jna', version: '5.3.1'
+// https://mvnrepository.com/artifact/org.codelibs/elasticsearch-querybuilders
+    compile group: 'org.codelibs', name: 'elasticsearch-querybuilders', version: '5.2.1'
+// https://mvnrepository.com/artifact/org.codelibs/elasticsearch-cluster-runner
+    testCompile group: 'org.codelibs', name: 'elasticsearch-cluster-runner', version: '6.6.2.0'
+
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+test {
+    useJUnitPlatform()
+}
